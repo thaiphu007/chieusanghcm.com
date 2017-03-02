@@ -1,0 +1,214 @@
+﻿/*	Define by Team Coder
+	Author: pennyauctionsoftware.com
+*/
+
+.imgDefault {
+    width: 325px;
+    display: inline;
+}
+
+.row_history tr {
+    height: 26px;
+}
+
+.seatcfr {
+    cellpadding: 5px;
+}
+/* savers #pagination-clean li,*/
+#pagination-clean {
+    width: 97%;
+    text-align: right;
+    padding: 0px 0px;
+}
+
+    #pagination-clean ul {
+        display: inline;
+        list-style: none;
+    }
+
+    #pagination-clean li {
+        display: inline;
+        background: none repeat scroll 0 0 #E9E9E9;
+        border: 1px solid #C0C0C0;
+        border-radius: 3px;
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset, 0 1px 3px rgba(0, 0, 0, 0.1);
+        display: inline-block;
+        color: #fff!important;
+        font-size: 0.875em;
+        font-weight: bold;
+        margin-right: 4px;
+        text-decoration: none;
+        text-shadow: 0 1px 0 #FFFFFF;
+    }
+
+    #pagination-clean a {
+        display: block;
+        padding: 2px 10px;
+        color:#999;
+    }
+
+    #pagination-clean .previous-off,
+    #pagination-clean .next-off {
+        color: #fff;
+        font-weight: normal;
+        display: inline;
+    }
+
+    #pagination-clean .next a,
+    #pagination-clean previous a {
+        border: none;
+        font-weight: normal;
+        color: #fff;
+    }
+
+    #pagination-clean .active {
+        background: #616161;
+        box-shadow: inset 0px 0px 8px rgba(0,0,0, .5), 0px 1px 0px rgba(255,255,255, .8);
+        color: #fff!important;
+        text-shadow: 0px 0px 3px rgba(0,0,0, .5);
+        border-radius: 3px;
+    }
+
+    #pagination-clean a:hover {
+        background: #616161;
+        box-shadow: inset 0px 0px 8px rgba(0,0,0, .5), 0px 1px 0px rgba(255,255,255, .8);
+        color: #fff;
+        text-shadow: 0px 0px 3px rgba(0,0,0, .5);
+        border-radius: 3px;
+        display: block;
+    }
+
+.ctab {
+    color: #383838;
+    line-height: 18px;
+    padding: 15px;
+    width: 96%;
+    float: left;
+}
+
+.payment_finish {
+    padding-top: 20px;
+}
+
+/* Login page --- */
+.contnetsubl {
+    border-right: 1px solid #E7E7E7;
+    float: left;
+    margin-top: 10px;
+    padding: 10px 20px 10px 10px;
+    width: 420px;
+}
+
+
+.contnetsubr {
+    float: right;
+    margin-top: 10px;
+    padding: 15px 5px 0 0;
+    position: relative;
+    width: 500px;
+}
+
+.loginfbbox {
+    position: absolute;
+    top: 40px;
+    right: 22px;
+    height: 100px;
+    width: 140px;
+    border-left: 1px dotted #ccc;
+    font-size: 14px;
+    padding-left: 15px;
+}
+
+.tblogin tr td {
+    padding: 5px 30px;
+}
+
+.font18 {
+    font-size: 18px;
+}
+
+.font13 {
+    line-height: 2;
+}
+
+label.error {
+    color: red;
+}
+
+.ctab {
+    color: #000000;
+    line-height: 18px;
+    padding: 15px;
+    width: 96%;
+    float: left;
+}
+
+/* ===========referfriends=================*/
+.referright {
+    width: 285px;
+    float: right;
+    margin-right: 20px;
+}
+
+.referleft {
+    width: 374px;
+    background: #fff;
+    float: left;
+    padding-bottom: 10px;
+}
+
+.tb_refer tr td {
+    padding: 10px 0px;
+}
+
+.tb_refer td {
+    border-bottom: 1px dashed #ccc;
+}
+
+.tb_refer label {
+    text-align: right;
+    width: 100px;
+    float: left;
+    display: block;
+    margin-right: 10px;
+}
+
+.text_left {
+    text-align: left;
+}
+
+.tf_refer {
+    width: 205px !important;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px 5px 5px 5px;
+    padding: 3px 5px;
+}
+
+.tarea_refer {
+    width: 205px;
+    height: 80px;
+    border: 1px solid #CCCCCC;
+    padding: 3px 5px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.textb {
+    color: #004188;
+    font-weight: bold;
+}
+
+.line_through {
+    text-decoration: line-through;
+}
+
+.clo_white a {
+    color: #000;
+}
+
+.WatchList {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 18px;
+}
+.loading {
+    background: url("/images/loading.gif") center center transparent no-repeat;
+}
