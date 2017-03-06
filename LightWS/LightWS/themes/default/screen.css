@@ -1,6 +1,6 @@
 ﻿@charset "utf-8";
 /* CSS Document - Format Frame - Block*/
-body{ background:url('../images/themes/body.gif')}
+body{ background:url('/content/images/themes/body.gif')}
 body,td,th {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 12px;
@@ -27,7 +27,7 @@ a{text-decoration:none;}
 
 .border-out-bottom{ border: 1px solid #BFBFBF; border-bottom:0;}
 .round_top_left_right{border-radius: 8px 8px 0 0;}
-.delete_on_title{ position:absolute; top:0; right:10px; width:18px; display:block; font-size:0; cursor:pointer; background:url(/images/themes/delete.png) center center no-repeat}
+.delete_on_title{ position:absolute; top:0; right:10px; width:18px; display:block; font-size:0; cursor:pointer; background:url(/content/images/themes/delete.png) center center no-repeat}
 .title_box1{padding-left:15px; height:55px; line-height:55px; position:relative}
 .content_box1{border-radius: 0 0 8px 8px;border: 1px solid #BFBFBF; padding:30px 15px 15px 15px; overflow:hidden}
 .content_box2{border-radius: 0 0 8px 8px;}
@@ -125,9 +125,9 @@ a.icon_myaccount:hover{color:#000;}
 .gridview .auction_item .sec2 .img_auction .proimg{ display:block}
 .gridview .auction_item .sec2 .img_auction .endmark{ width:140px; height:120px; position:absolute; top:0; left:0; background: rgba(0, 0, 0, 0.5);  line-height:120px; text-align:center;font-weight:bold; display:none}
 .gridview .auction_item .sec2 .img_auction .endmark span{ display:block; font-size:36px; color:#FF0000; -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg);    -o-transform: rotate(-45deg); writing-mode: tb-rl;}
-.gridview .auction_item .sec2 .img_auction .icongiveaway{ height: 55px; width:55px; top:-10px; right:-10px; position: absolute; width: 55px; z-index: 100; background:url(/images/themes/giveaway.png); display:none}
-.gridview .auction_item .sec2 .img_auction .iconminimum{ height: 55px; width:55px; top:-10px; right:-10px; position: absolute; width: 55px; z-index: 100; background:url(/images/themes/icon_minprice.png); display:none}
-.gridview .auction_item .sec2 .img_auction .icongoldentime{ height: 55px; width:55px; top:-10px; right:-10px; position: absolute; width: 55px; z-index: 100; background:url(/images/themes/goldentime.png); display:none}
+.gridview .auction_item .sec2 .img_auction .icongiveaway{ height: 55px; width:55px; top:-10px; right:-10px; position: absolute; width: 55px; z-index: 100; background:url(/content/images/themes/giveaway.png); display:none}
+.gridview .auction_item .sec2 .img_auction .iconminimum{ height: 55px; width:55px; top:-10px; right:-10px; position: absolute; width: 55px; z-index: 100; background:url(/content/images/themes/icon_minprice.png); display:none}
+.gridview .auction_item .sec2 .img_auction .icongoldentime{ height: 55px; width:55px; top:-10px; right:-10px; position: absolute; width: 55px; z-index: 100; background:url(/content/images/themes/goldentime.png); display:none}
 
 .gridview .auction_item .sec3{ width:100%}
 .gridview .auction_item .sec3 .timer{font-size:26px;}
@@ -165,9 +165,9 @@ a.icon_myaccount:hover{color:#000;}
 .listview .auction_item .sec2 .img_auction .proimg{ display:block}
 .listview .auction_item .sec2 .img_auction .endmark{ width:140px; height:120px; position:absolute; top:0; left:0; background: rgba(0, 0, 0, 0.5);  line-height:120px; text-align:center;font-weight:bold; display:none}
 .listview .auction_item .sec2 .img_auction .endmark span{ display:block; font-size:36px; color:#FF0000; -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg);    -o-transform: rotate(-45deg); writing-mode: tb-rl;}
-.listview .auction_item .sec2 .img_auction .icongiveaway{ height: 55px; width:55px; top:-10px; right:-10px; position: absolute; width: 55px; z-index: 100; background:url(/images/themes/giveaway.png); display:none}
-.listview .auction_item .sec2 .img_auction .iconminimum{ height: 55px; width:55px; top:-10px; right:-10px; position: absolute; width: 55px; z-index: 100; background:url(/images/themes/icon_minprice.png); display:none}
-.listview .auction_item .sec2 .img_auction .icongoldentime{ height: 55px; width:55px; top:-10px; right:-10px; position: absolute; width: 55px; z-index: 100; background:url(/images/themes/goldentime.png); display:none}
+.listview .auction_item .sec2 .img_auction .icongiveaway{ height: 55px; width:55px; top:-10px; right:-10px; position: absolute; width: 55px; z-index: 100; background:url(/content/images/themes/giveaway.png); display:none}
+.listview .auction_item .sec2 .img_auction .iconminimum{ height: 55px; width:55px; top:-10px; right:-10px; position: absolute; width: 55px; z-index: 100; background:url(/content/images/themes/icon_minprice.png); display:none}
+.listview .auction_item .sec2 .img_auction .icongoldentime{ height: 55px; width:55px; top:-10px; right:-10px; position: absolute; width: 55px; z-index: 100; background:url(/content/images/themes/goldentime.png); display:none}
 
 .listview .auction_item .sec3{width:25%; float:right; padding-top:15px}
 .listview .auction_item .sec3 .timer{font-size:26px;}
@@ -194,9 +194,9 @@ a.icon_myaccount:hover{color:#000;}
 .related .auction_item .sec2 .img_auction .proimg{ display:block}
 .related .auction_item .sec2 .img_auction .endmark{ width:140px; height:120px; position:absolute; top:0; left:0; background: rgba(0, 0, 0, 0.5);  line-height:120px; text-align:center;font-weight:bold; display:none}
 .related .auction_item .sec2 .img_auction .endmark span{ display:block; font-size:36px; color:#FF0000; -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg);    -o-transform: rotate(-45deg); writing-mode: tb-rl;}
-.related .auction_item .sec2 .img_auction .icongiveaway{ height: 55px; width:55px; top:-10px; right:-10px; position: absolute; width: 55px; z-index: 100; background:url(/images/themes/giveaway.png); display:none}
-.related .auction_item .sec2 .img_auction .iconminimum{ height: 55px; width:55px; top:-10px; right:-10px; position: absolute; width: 55px; z-index: 100; background:url(/images/themes/icon_minprice.png); display:none}
-.related .auction_item .sec2 .img_auction .icongoldentime{ height: 55px; width:55px; top:-10px; right:-10px; position: absolute; width: 55px; z-index: 100; background:url(/images/themes/goldentime.png); display:none}
+.related .auction_item .sec2 .img_auction .icongiveaway{ height: 55px; width:55px; top:-10px; right:-10px; position: absolute; width: 55px; z-index: 100; background:url(/content/images/themes/giveaway.png); display:none}
+.related .auction_item .sec2 .img_auction .iconminimum{ height: 55px; width:55px; top:-10px; right:-10px; position: absolute; width: 55px; z-index: 100; background:url(/content/images/themes/icon_minprice.png); display:none}
+.related .auction_item .sec2 .img_auction .icongoldentime{ height: 55px; width:55px; top:-10px; right:-10px; position: absolute; width: 55px; z-index: 100; background:url(/content/images/themes/goldentime.png); display:none}
 
 .related .auction_item .sec3{ width:100%}
 .related .auction_item .sec3 .timer{font-size:26px; display:none}
@@ -237,9 +237,9 @@ a.icon_myaccount:hover{color:#000;}
 .detail .auction_item .sec2 .img_auction .proimg{ display:none}
 .detail .auction_item .sec2 .img_auction .endmark{ width:140px; height:120px; position:absolute; top:0; left:0; background: rgba(0, 0, 0, 0.5);  line-height:120px; text-align:center;font-weight:bold; display:none}
 .detail .auction_item .sec2 .img_auction .endmark span{ display:block; font-size:36px; color:#FF0000; -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg);detail-o-transform: rotate(-45deg); writing-mode: tb-rl;}
-.detail .auction_item .sec2 .img_auction .icongiveaway{ height: 55px; width:55px; top:-10px; right:-10px; position: absolute; width: 55px; z-index: 100; background:url(/images/themes/giveaway.png); display:none}
-.detail .auction_item .sec2 .img_auction .iconminimum{ height: 55px; width:55px; top:-10px; right:-10px; position: absolute; width: 55px; z-index: 100; background:url(/images/themes/icon_minprice.png); display:none}
-.detail .auction_item .sec2 .img_auction .icongoldentime{ height: 55px; width:55px; top:-10px; right:-10px; position: absolute; width: 55px; z-index: 100; background:url(/images/themes/goldentime.png); display:none}
+.detail .auction_item .sec2 .img_auction .icongiveaway{ height: 55px; width:55px; top:-10px; right:-10px; position: absolute; width: 55px; z-index: 100; background:url(/content/images/themes/giveaway.png); display:none}
+.detail .auction_item .sec2 .img_auction .iconminimum{ height: 55px; width:55px; top:-10px; right:-10px; position: absolute; width: 55px; z-index: 100; background:url(/content/images/themes/icon_minprice.png); display:none}
+.detail .auction_item .sec2 .img_auction .icongoldentime{ height: 55px; width:55px; top:-10px; right:-10px; position: absolute; width: 55px; z-index: 100; background:url(/content/images/themes/goldentime.png); display:none}
 
 .detail .auction_item .sec3{ width:100%}
 .detail .auction_item .sec3 .timer{font-size:26px;}
@@ -397,10 +397,10 @@ a.icon_myaccount:hover{color:#000;}
 .frm-input-bidcard span{color:#666;}
 .frm-input-bidcard .reponsetxt{color:Red; font-weight:bold;}
 .frm-input-bidcard .forminput {width:500px; overflow:hidden;} 
-.frm-input-bidcard .forminput .formcardleft{height:38px; width:390px; background: url(/images/themes/bg_input-bidcard.jpg) 0 0 repeat-x; float:left; color:White; font-weight:bold; font-size:18px; padding-top:7px; padding-left:15px;border-radius: 8px 0 0 8px !important;}
+.frm-input-bidcard .forminput .formcardleft{height:38px; width:390px; background: url(/content/images/themes/bg_input-bidcard.jpg) 0 0 repeat-x; float:left; color:White; font-weight:bold; font-size:18px; padding-top:7px; padding-left:15px;border-radius: 8px 0 0 8px !important;}
 .frm-input-bidcard .forminput .formcardleft input{ width:245px; padding:0 10px; font-size:24px; color:Gray; letter-spacing:6px; margin-left:10px;}
-.frm-input-bidcard .forminput .formcardright{height:45px; width:94px; background: url(/images/themes/bg_input-bidcard.jpg) 0 -45px repeat-x; float:right; color:White; font-weight:bold; font-size:18px; border-radius: 0 8px 8px 0 !important;} 
-.frm-input-bidcard .forminput .formcardright:hover{background: url(/images/themes/bg_input-bidcard.jpg) 0 -90px repeat-x; text-shadow: 0 1px 1px #666;} 
+.frm-input-bidcard .forminput .formcardright{height:45px; width:94px; background: url(/content/images/themes/bg_input-bidcard.jpg) 0 -45px repeat-x; float:right; color:White; font-weight:bold; font-size:18px; border-radius: 0 8px 8px 0 !important;} 
+.frm-input-bidcard .forminput .formcardright:hover{background: url(/content/images/themes/bg_input-bidcard.jpg) 0 -90px repeat-x; text-shadow: 0 1px 1px #666;} 
 
 /* Redeem BidCrad -------------------- End */
 
@@ -514,7 +514,7 @@ a.icon_myaccount:hover{color:#000;}
     vertical-align: middle;
 }
 .forsale_item .saleprice .discount{
-   background: rgba(0, 0, 0, 0) url("../../images/tag.png") no-repeat scroll 0 0 / auto 100%;
+   background: rgba(0, 0, 0, 0) url("..//content/images/tag.png") no-repeat scroll 0 0 / auto 100%;
     color: #fff;
     float: right;
     font-size: 1em;
@@ -550,7 +550,7 @@ a.icon_myaccount:hover{color:#000;}
     vertical-align: middle;
 }
 .forsale_item_detail_right .saleprice .discount{
-   background: rgba(0, 0, 0, 0) url("../../images/tag.png") no-repeat scroll 0 0 / auto 100%;
+   background: rgba(0, 0, 0, 0) url("..//content/images/tag.png") no-repeat scroll 0 0 / auto 100%;
     color: #fff;
     float: left;
     font-size: 1em;

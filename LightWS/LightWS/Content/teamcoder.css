@@ -210,5 +210,5 @@ label.error {
     font-size: 18px;
 }
 .loading {
-    background: url("/images/loading.gif") center center transparent no-repeat;
+    background: url("/content/images/loading.gif") center center transparent no-repeat;
 }

@@ -79,7 +79,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', end
         }
 
     .right-top .topusename {
-        background: url(/images/themes/login-sprite.png) repeat-y scroll 0 2px #fff;
+        background: url(/content/images/themes/login-sprite.png) repeat-y scroll 0 2px #fff;
         color: #666;
         padding-left: 38px;
         width: 90px;
@@ -87,7 +87,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', end
     }
 
     .right-top .toppass {
-        background: url(/images/themes/login-sprite.png) repeat-y scroll 0 -22px #fff;
+        background: url(/content/images/themes/login-sprite.png) repeat-y scroll 0 -22px #fff;
         color: #666;
         padding-left: 38px;
         width: 90px;
@@ -116,12 +116,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', end
     }
 
     .right-top:hover .topusename {
-        background: url(/images/themes/login-sprite.png) repeat-y scroll 0 -47px #fff;
+        background: url(/content/images/themes/login-sprite.png) repeat-y scroll 0 -47px #fff;
         color: #000;
     }
 
     .right-top:hover .toppass {
-        background: url(/images/themes/login-sprite.png) repeat-y scroll 0 -71px #fff;
+        background: url(/content/images/themes/login-sprite.png) repeat-y scroll 0 -71px #fff;
         color: #000;
     }
 
@@ -631,7 +631,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bfd255', end
 }
 
 .btseach {
-    background-image: url("/images/themes/search-bar-icon.png") !important;
+    background-image: url("/content/images/themes/search-bar-icon.png") !important;
     background-position: center top !important;
     border-bottom: 0 none;
     border-radius: 0 4px 4px 0 !important;
@@ -648,6 +648,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bfd255', end
 }
 
     .btseach:hover {
-        background-image: url("/images/themes/search-bar-icon.png") !important;
+        background-image: url("/content/images/themes/search-bar-icon.png") !important;
         background-position: center bottom !important;
     }

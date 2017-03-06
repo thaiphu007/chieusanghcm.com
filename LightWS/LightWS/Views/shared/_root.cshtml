@@ -2,12 +2,18 @@
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
+    @Styles.Render("~/content/css")
+    @Scripts.Render("~/bundles/jquery")
 </head>
 <body>
-    <div>
+    <div class="bg_allpage">
+        @Html.Partial("_header_menu")
         @RenderBody()
+        @Html.Partial("_footer")
     </div>
+  
 </body>
 </html>

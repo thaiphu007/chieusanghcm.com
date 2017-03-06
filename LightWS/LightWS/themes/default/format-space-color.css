@@ -10,7 +10,7 @@ hr{height:1px; opacity:0.3}
 img{border:0; border:none}
 
 /* background ----------------------------------- */
-.bgdot{background: url(/images/dot.jpg) center center repeat-x;}
+.bgdot{background: url(/content/images/dot.jpg) center center repeat-x;}
 .bg_blue{background:#49b8da!important;}
 .bg_grey{background:#f5f5f5;}
 .bg_grey1{background:#000;}
@@ -304,7 +304,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#575b60', end
 }
 input.buttons.white {
     background-color: #E2E2E2;
-    background-image: url("/images/themes/white-btn.jpg");
+    background-image: url("/content/images/themes/white-btn.jpg");
     border-color: #C7C7C7;
     color: #007FDD;
     text-shadow: 0 1px 1px #B8B8B8;
@@ -314,11 +314,11 @@ input.buttons.white:hover {
 }
 
 
-.extendsecond{color:#FF0000; background-image: url("/images/themes/Circle_Grey.png"); font-weight:bold}
-.subbidno{color:#FFF; background-image: url("/images/themes/Circle_Orange.png"); font-weight:bold}
-.autobid{color:#FFF; background-image: url("/images/themes/bid_agent_1.png"); font-weight:bold}
-.buynow{color:#FFF; background-image: url("/images/themes/buynow_1.png"); font-weight:bold}
-.chair{color:#FFF; background-image: url("/images/themes/chair.png"); font-weight:bold}
+.extendsecond{color:#FF0000; background-image: url("/content/images/themes/Circle_Grey.png"); font-weight:bold}
+.subbidno{color:#FFF; background-image: url("/content/images/themes/Circle_Orange.png"); font-weight:bold}
+.autobid{color:#FFF; background-image: url("/content/images/themes/bid_agent_1.png"); font-weight:bold}
+.buynow{color:#FFF; background-image: url("/content/images/themes/buynow_1.png"); font-weight:bold}
+.chair{color:#FFF; background-image: url("/content/images/themes/chair.png"); font-weight:bold}
 
 ul.menu_right{ list-style:none; padding:0; margin:0}
 ul.menu_right li{ border-bottom:dotted 1px #BFBFBF}
@@ -326,9 +326,9 @@ ul.menu_right li a{ color:#000; text-decoration:none; display:block; margin:5px 
 ul.menu_right li a:hover{ color:#222;}
 
 
-.notifications_icon{background: url("/images/themes/notification_icon.png")center top no-repeat;}
-.biddinghistory_icon{background: url("/images/themes/history_icon.png")center top no-repeat;}
-.won_icon{background: url("/images/themes/won_icon.png")center top no-repeat;}
-.avatar_icon{background: url("/images/themes/avatar_icon.png")center top no-repeat;}
-.auto_icon{background: url("/images/themes/auto_icon.png")center top no-repeat;}
-.watch_icon{background: url("/images/themes/watchlist_icon.png")center top no-repeat;}
+.notifications_icon{background: url("/content/images/themes/notification_icon.png")center top no-repeat;}
+.biddinghistory_icon{background: url("/content/images/themes/history_icon.png")center top no-repeat;}
+.won_icon{background: url("/content/images/themes/won_icon.png")center top no-repeat;}
+.avatar_icon{background: url("/content/images/themes/avatar_icon.png")center top no-repeat;}
+.auto_icon{background: url("/content/images/themes/auto_icon.png")center top no-repeat;}
+.watch_icon{background: url("/content/images/themes/watchlist_icon.png")center top no-repeat;}
