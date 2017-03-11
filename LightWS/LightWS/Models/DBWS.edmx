@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MarketingOnlineDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Article">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="255" />
+          <Property Name="Summary" Type="nvarchar" MaxLength="500" />
+          <Property Name="Image" Type="varchar" MaxLength="250" />
+          <Property Name="Content" Type="nvarchar(max)" />
+          <Property Name="MetaTitle" Type="nvarchar" MaxLength="250" />
+          <Property Name="MetaKeyword" Type="nvarchar" MaxLength="250" />
+          <Property Name="MetaDescription" Type="text" />
+          <Property Name="Status" Type="int" />
+          <Property Name="CustomTitle" Type="nvarchar" MaxLength="255" />
+          <Property Name="TypeId" Type="int" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CateName" Type="nvarchar" MaxLength="150" />
+          <Property Name="ShortUrl" Type="nvarchar" MaxLength="250" />
+          <Property Name="Icon" Type="nvarchar" MaxLength="500" />
+          <Property Name="ParentId" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="OrderNo" Type="int" />
+          <Property Name="Hidden" Type="bit" />
+          <Property Name="ModuleId" Type="int" />
+        </EntityType>
+        <EntityType Name="FooterMenu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ParentId" Type="int" />
+          <Property Name="Title" Type="nvarchar" MaxLength="250" />
+          <Property Name="Link" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status" Type="int" />
+          <Property Name="OrderNo" Type="int" />
+          <Property Name="ArticleId" Type="bigint" />
+          <Property Name="Target" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Module">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ModuleName" Type="nvarchar" MaxLength="150" />
+          <Property Name="ShortUrl" Type="nvarchar" MaxLength="250" />
+          <Property Name="Hidden" Type="bit" />
+          <Property Name="FeatureHash" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Product_Category_Mapping">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductId" Type="bigint" />
+          <Property Name="CategoryId" Type="int" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Descriptions" Type="nvarchar(max)" />
+          <Property Name="ShortDesc" Type="nvarchar" MaxLength="500" />
+          <Property Name="ShortUrl" Type="nvarchar" MaxLength="100" />
+          <Property Name="ImageDefault" Type="nvarchar" MaxLength="500" />
+          <Property Name="Images" Type="nvarchar(max)" />
+          <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="MetaTitle" Type="nvarchar" MaxLength="500" />
+          <Property Name="MetaKeyword" Type="nvarchar" MaxLength="500" />
+          <Property Name="MetaDesc" Type="nvarchar" MaxLength="500" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="IsPromote" Type="bit" />
+          <Property Name="OldPrice" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="SystemKey">
+          <Key>
+            <PropertyRef Name="Key" />
+          </Key>
+          <Property Name="Key" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Value" Type="nvarchar" MaxLength="500" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_FooterMenu_Article">
+          <End Role="Article" Type="Self.Article" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="FooterMenu" Type="Self.FooterMenu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Article">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FooterMenu">
+              <PropertyRef Name="ArticleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Category_Mapping_Category">
+          <End Role="Category" Type="Self.Category" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Product_Category_Mapping" Type="Self.Product_Category_Mapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product_Category_Mapping">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Category_Mapping_Products">
+          <End Role="Products" Type="Self.Products" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Product_Category_Mapping" Type="Self.Product_Category_Mapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product_Category_Mapping">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MarketingOnlineDBModelStoreContainer">
+          <EntitySet Name="Article" EntityType="Self.Article" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FooterMenu" EntityType="Self.FooterMenu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Module" EntityType="Self.Module" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product_Category_Mapping" EntityType="Self.Product_Category_Mapping" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SystemKey" EntityType="Self.SystemKey" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_FooterMenu_Article" Association="Self.FK_FooterMenu_Article">
+            <End Role="Article" EntitySet="Article" />
+            <End Role="FooterMenu" EntitySet="FooterMenu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Category_Mapping_Category" Association="Self.FK_Product_Category_Mapping_Category">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Product_Category_Mapping" EntitySet="Product_Category_Mapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Category_Mapping_Products" Association="Self.FK_Product_Category_Mapping_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Product_Category_Mapping" EntitySet="Product_Category_Mapping" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MarketingOnlineDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="MarketingOnlineDBEntities" annotation:LazyLoadingEnabled="true" >
+          <EntitySet Name="Articles" EntityType="MarketingOnlineDBModel.Article" />
+          <EntitySet Name="Categories" EntityType="MarketingOnlineDBModel.Category" />
+          <EntitySet Name="FooterMenus" EntityType="MarketingOnlineDBModel.FooterMenu" />
+          <EntitySet Name="Modules" EntityType="MarketingOnlineDBModel.Module" />
+          <EntitySet Name="Product_Category_Mapping" EntityType="MarketingOnlineDBModel.Product_Category_Mapping" />
+          <EntitySet Name="Products" EntityType="MarketingOnlineDBModel.Product" />
+          <EntitySet Name="SystemKeys" EntityType="MarketingOnlineDBModel.SystemKey" />
+          <AssociationSet Name="FK_FooterMenu_Article" Association="MarketingOnlineDBModel.FK_FooterMenu_Article">
+            <End Role="Article" EntitySet="Articles" />
+            <End Role="FooterMenu" EntitySet="FooterMenus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Category_Mapping_Category" Association="MarketingOnlineDBModel.FK_Product_Category_Mapping_Category">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="Product_Category_Mapping" EntitySet="Product_Category_Mapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Category_Mapping_Products" Association="MarketingOnlineDBModel.FK_Product_Category_Mapping_Products">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="Product_Category_Mapping" EntitySet="Product_Category_Mapping" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Article">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Summary" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MetaTitle" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="MetaKeyword" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="MetaDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="CustomTitle" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="TypeId" Type="Int32" />
+          <NavigationProperty Name="FooterMenus" Relationship="MarketingOnlineDBModel.FK_FooterMenu_Article" FromRole="Article" ToRole="FooterMenu" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CateName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ShortUrl" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Icon" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ParentId" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="OrderNo" Type="Int32" />
+          <Property Name="Hidden" Type="Boolean" />
+          <Property Name="ModuleId" Type="Int32" />
+          <NavigationProperty Name="Product_Category_Mapping" Relationship="MarketingOnlineDBModel.FK_Product_Category_Mapping_Category" FromRole="Category" ToRole="Product_Category_Mapping" />
+        </EntityType>
+        <EntityType Name="FooterMenu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ParentId" Type="Int32" />
+          <Property Name="Title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Link" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="OrderNo" Type="Int32" />
+          <Property Name="ArticleId" Type="Int64" />
+          <Property Name="Target" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Article" Relationship="MarketingOnlineDBModel.FK_FooterMenu_Article" FromRole="FooterMenu" ToRole="Article" />
+        </EntityType>
+        <EntityType Name="Module">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ModuleName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ShortUrl" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Hidden" Type="Boolean" />
+          <Property Name="FeatureHash" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Product_Category_Mapping">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductId" Type="Int64" />
+          <Property Name="CategoryId" Type="Int32" />
+          <NavigationProperty Name="Category" Relationship="MarketingOnlineDBModel.FK_Product_Category_Mapping_Category" FromRole="Product_Category_Mapping" ToRole="Category" />
+          <NavigationProperty Name="Product" Relationship="MarketingOnlineDBModel.FK_Product_Category_Mapping_Products" FromRole="Product_Category_Mapping" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Descriptions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ShortDesc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ShortUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ImageDefault" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Images" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="MetaTitle" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MetaKeyword" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MetaDesc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="IsPromote" Type="Boolean" />
+          <Property Name="OldPrice" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="Product_Category_Mapping" Relationship="MarketingOnlineDBModel.FK_Product_Category_Mapping_Products" FromRole="Product" ToRole="Product_Category_Mapping" />
+        </EntityType>
+        <EntityType Name="SystemKey">
+          <Key>
+            <PropertyRef Name="Key" />
+          </Key>
+          <Property Name="Key" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Value" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <Association Name="FK_FooterMenu_Article">
+          <End Type="MarketingOnlineDBModel.Article" Role="Article" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MarketingOnlineDBModel.FooterMenu" Role="FooterMenu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Article">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FooterMenu">
+              <PropertyRef Name="ArticleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Category_Mapping_Category">
+          <End Type="MarketingOnlineDBModel.Category" Role="Category" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MarketingOnlineDBModel.Product_Category_Mapping" Role="Product_Category_Mapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product_Category_Mapping">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Category_Mapping_Products">
+          <End Type="MarketingOnlineDBModel.Product" Role="Product" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MarketingOnlineDBModel.Product_Category_Mapping" Role="Product_Category_Mapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product_Category_Mapping">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MarketingOnlineDBModelStoreContainer" CdmEntityContainer="MarketingOnlineDBEntities" >
+          <EntitySetMapping Name="Articles">
+            <EntityTypeMapping TypeName="MarketingOnlineDBModel.Article">
+              <MappingFragment StoreEntitySet="Article">
+                <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+                <ScalarProperty Name="CustomTitle" ColumnName="CustomTitle" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="MetaDescription" ColumnName="MetaDescription" />
+                <ScalarProperty Name="MetaKeyword" ColumnName="MetaKeyword" />
+                <ScalarProperty Name="MetaTitle" ColumnName="MetaTitle" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Summary" ColumnName="Summary" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="MarketingOnlineDBModel.Category">
+              <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+                <ScalarProperty Name="Hidden" ColumnName="Hidden" />
+                <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="Icon" ColumnName="Icon" />
+                <ScalarProperty Name="ShortUrl" ColumnName="ShortUrl" />
+                <ScalarProperty Name="CateName" ColumnName="CateName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FooterMenus">
+            <EntityTypeMapping TypeName="MarketingOnlineDBModel.FooterMenu">
+              <MappingFragment StoreEntitySet="FooterMenu">
+                <ScalarProperty Name="Target" ColumnName="Target" />
+                <ScalarProperty Name="ArticleId" ColumnName="ArticleId" />
+                <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Modules">
+            <EntityTypeMapping TypeName="MarketingOnlineDBModel.Module">
+              <MappingFragment StoreEntitySet="Module">
+                <ScalarProperty Name="FeatureHash" ColumnName="FeatureHash" />
+                <ScalarProperty Name="Hidden" ColumnName="Hidden" />
+                <ScalarProperty Name="ShortUrl" ColumnName="ShortUrl" />
+                <ScalarProperty Name="ModuleName" ColumnName="ModuleName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Product_Category_Mapping">
+            <EntityTypeMapping TypeName="MarketingOnlineDBModel.Product_Category_Mapping">
+              <MappingFragment StoreEntitySet="Product_Category_Mapping">
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="MarketingOnlineDBModel.Product">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="OldPrice" ColumnName="OldPrice" />
+                <ScalarProperty Name="IsPromote" ColumnName="IsPromote" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="MetaDesc" ColumnName="MetaDesc" />
+                <ScalarProperty Name="MetaKeyword" ColumnName="MetaKeyword" />
+                <ScalarProperty Name="MetaTitle" ColumnName="MetaTitle" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Images" ColumnName="Images" />
+                <ScalarProperty Name="ImageDefault" ColumnName="ImageDefault" />
+                <ScalarProperty Name="ShortUrl" ColumnName="ShortUrl" />
+                <ScalarProperty Name="ShortDesc" ColumnName="ShortDesc" />
+                <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SystemKeys">
+            <EntityTypeMapping TypeName="MarketingOnlineDBModel.SystemKey">
+              <MappingFragment StoreEntitySet="SystemKey">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
