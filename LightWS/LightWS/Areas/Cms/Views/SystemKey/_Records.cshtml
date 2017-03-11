@@ -1,0 +1,37 @@
+﻿
+@model SystemKeyViewModel
+@{
+    var Lists = ViewBag.List as IEnumerable<SystemKey>;
+}
+
+<table id="myTable" class="table table-striped jambo_table bulk_action">
+    <thead>
+        <tr class="headings">
+            <th class="column-title" style="display: table-cell;">@Html.Raw("STT")</th>
+            <th class="column-title" style="display: table-cell;">@Html.LabelFor(Model => Model.Key)</th>
+            <th class="column-title" style="display: table-cell;">@Html.LabelFor(Model => Model.Value)</th>
+            <th class="column-title no-link last" style="display: table-cell;">
+                <span class="nobr">@Html.Raw("Action")</span>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ var STT = 1; }
+        @foreach (var List in Lists)
+        {
+            <tr data-id="@List.Id">
+                <td>
+                    @STT
+                </td>
+                <td>#@List.Key</td>
+                <td>@Html.Raw(List.Value)</td>
+                <td class="last">
+                    <a style="cursor:pointer" class="itemEdit" onclick="Edit(@List.Id)"><i class="fa fa-pencil"></i> </a>
+                    <a style="cursor:pointer" class="itemDelete" onclick="Delete(@List.Id)"><i class="fa fa-trash"></i> </a>
+                </td>
+            </tr>
+
+            STT++;
+        }
+    </tbody>
+</table>

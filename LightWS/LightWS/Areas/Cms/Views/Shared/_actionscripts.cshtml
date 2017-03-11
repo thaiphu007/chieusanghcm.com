@@ -1,0 +1,175 @@
+﻿<script type="text/javascript">
+    function reloadData(isDelete) {
+        var oSettings = $('#myTable').dataTable().fnSettings();
+        var currentPageIndex = Math.ceil(oSettings._iDisplayStart / oSettings._iDisplayLength) + 1;
+        $.get("@Url.Action("getlist")", function (response) {
+            $('.table-responsive').html(response);
+            $("#myTable").dataTable({
+                "destroy": true,
+                "initComplete": function (oSettings) {
+                    if (!isDelete) {
+                        var oTable = this;
+                        var totalRows = oTable.fnGetData().length;
+                        oTable.fnPageChange(currentPageIndex - 1);
+                        page = Math.ceil(oSettings._iDisplayStart / oSettings._iDisplayLength);
+                    }
+                }
+                // ... skipped ...
+            });
+
+        });
+    }
+</script>
+
+<script type="text/javascript">
+    var $id = "";
+    var $modal = $('#myModal');
+    var $myModalContent = $("#myModalContent");
+    var $myModalTitle = $("#myModalTitle");
+    var $table = $('#myTable').DataTable({
+        responsive: true
+    });
+    function CKupdate() {
+        for (instance in CKEDITOR.instances)
+            CKEDITOR.instances[instance].updateElement();
+    }
+    $(document).ready(function () {
+        $("#btSave").click(function () {
+            form = $("#frm");
+            form.removeData('validator');
+            form.removeData('unobtrusiveValidation');
+            $.validator.unobtrusive.parse("#frm");
+            if (form.valid()) {
+                CKupdate();
+                var formdata = $(form).serialize();
+
+                $.ajax({
+                    url: $("#Id").val() == "0" ? '@Url.Action("Insert")' : '@Url.Action("Edit")',
+                    timeout: 20000,
+                    async: false,
+                    type: "POST",
+                    data: formdata,
+                    processData: false,
+                    dataType: 'json',
+                    success: function (result) {
+                        if (result.status >= 1) {
+                            ShowNoti(result.title, result.text, "success");
+                        }
+                        else {
+                            ShowNoti(result.title, result.text, "error");
+                        }
+                    },
+                    failure: function (message) {
+                    }
+                });
+            }
+        });
+
+        $("#btInsert").click(function () {
+            $myModalContent.html("");
+            $myModalTitle.html("Insert");
+            $.ajax({
+                url: '@Url.Action("DetailForEdit")',
+                timeout: 20000,
+                async: false,
+                data: {
+                    id: 0
+                },
+                beforeSend: function (xhr) {
+                    $(".divLoading").addClass("loading");
+                },
+                success: function (result) {
+                    $myModalContent.html(result);
+                    $modal.modal();
+                    $(".divLoading").removeClass("loading");
+                },
+                failure: function (message) {
+                }
+            });
+        });
+
+        $("#myModal").on("hidden.bs.modal", function () {
+            reloadData(false);
+        });
+    });
+
+    function Delete(id_) {
+        var confirm_ = confirm('Are you Sure?');
+        if (confirm_) {
+            $.ajax({
+                url: '@Url.Action("Delete")',
+                timeout: 20000,
+                async: false,
+                data: { id: id_ },
+                beforeSend: function (xhr) {
+                    $(".divLoading").addClass("loading");
+                },
+                success: function (result) {
+                    if (result.status >= 1) {
+                        ShowNoti(result.title, result.text, "success");
+                    }
+                    else {
+                        ShowNoti(result.title, result.text, "error");
+                    }
+                    $(".divLoading").removeClass("loading");
+                    reloadData(true);
+                },
+                failure: function (message) {
+                    $(".divLoading").removeClass("loading");
+                }
+            });
+        }
+
+    }
+    function change(this_) {
+        $('[name=Status][type=hidden]').val($(this_).is(':checked'));
+
+    }
+
+    function Edit(id_) {
+        $myModalContent.html("");
+        $myModalTitle.html("Edit");
+        $.ajax({
+            url: '@Url.Action("DetailForEdit")',
+            timeout: 20000,
+            async: false,
+            data: {
+                id: id_
+            },
+            beforeSend: function (xhr) {
+                $(".divLoading").addClass("loading");
+            },
+            success: function (result) {
+                $(".divLoading").removeClass("loading");
+                $myModalContent.html(result);
+                $modal.modal();
+            },
+            failure: function (message) {
+                $(".divLoading").removeClass("loading");
+            }
+        });
+    }
+    function FAQs(id_) {
+        $myModalContent.html("");
+        $myModalTitle.html("Edit");
+        $.ajax({
+            url: '@Url.Action("DetailForEdit")',
+            timeout: 20000,
+            async: false,
+            data: {
+                id: id_
+            },
+            beforeSend: function (xhr) {
+                $(".divLoading").addClass("loading");
+            },
+            success: function (result) {
+                $(".divLoading").removeClass("loading");
+                $myModalContent.html(result);
+                $modal.modal();
+            },
+            failure: function (message) {
+                $(".divLoading").removeClass("loading");
+            }
+        });
+    }
+</script>

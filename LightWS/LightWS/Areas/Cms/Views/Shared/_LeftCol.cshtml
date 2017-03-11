@@ -1,0 +1,141 @@
+﻿
+<div class="left_col scroll-view">
+    <div class="navbar nav_title" style="border: 0;">
+        <a href="@Url.Action("Index", "Default")" class="site_title"><i class="fa fa-paw"></i> <span>CMS</span></a>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <br />
+
+    <!-- sidebar menu -->
+    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+        <div class="menu_section">
+            <h3>General</h3>
+            <ul class="nav side-menu">
+                <li class="@Html.IsActive("Index", "Default")">
+                    <a href="@Url.Action("Index", "Default")"><i class="fa fa-home"></i> Dashboard <span class="fa"></span></a>
+                </li>
+                
+                <li>
+                    <a><i class="fa fa-clone"></i> System Management <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">                      
+                        <li class="@Html.IsActive("Index", "SystemKey")"><a href="@Url.Action("Index", "SystemKey")">System Keys</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <!-- /sidebar menu -->
+    <!-- /menu footer buttons -->
+    <div class="sidebar-footer hidden-small">
+        <a data-toggle="tooltip" data-placement="top" title="">
+            <span class="glyphicon " aria-hidden="true"></span>
+        </a>
+        <a data-toggle="tooltip" data-placement="top" title="">
+            <span id="fsbutton" class="glyphicon" aria-hidden="true"></span> @*glyphicon-fullscreen*@
+        </a>
+        <a data-toggle="tooltip" data-placement="top" title="">
+            <span class="glyphicon " aria-hidden="true"></span>
+        </a>
+        <a href="/Cms/Account/LogOut" data-toggle="tooltip" data-placement="top" title="Logout">
+            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+        </a>
+    </div>
+    <!-- /menu footer buttons -->
+</div>
+
+
+@*<script>
+
+        /*
+        Native FullScreen JavaScript API
+        -------------
+        Assumes Mozilla naming conventions instead of W3C for now
+        */
+
+        (function () {
+            var
+                fullScreenApi = {
+                    supportsFullScreen: false,
+                    isFullScreen: function () { return false; },
+                    requestFullScreen: function () { },
+                    cancelFullScreen: function () { },
+                    fullScreenEventName: '',
+                    prefix: ''
+                },
+                browserPrefixes = 'webkit moz o ms khtml'.split(' ');
+
+            // check for native support
+            if (typeof document.cancelFullScreen != 'undefined') {
+                fullScreenApi.supportsFullScreen = true;
+            } else {
+                // check for fullscreen support by vendor prefix
+                for (var i = 0, il = browserPrefixes.length; i < il; i++) {
+                    fullScreenApi.prefix = browserPrefixes[i];
+
+                    if (typeof document[fullScreenApi.prefix + 'CancelFullScreen'] != 'undefined') {
+                        fullScreenApi.supportsFullScreen = true;
+
+                        break;
+                    }
+                }
+            }
+
+            // update methods to do something useful
+            if (fullScreenApi.supportsFullScreen) {
+                fullScreenApi.fullScreenEventName = fullScreenApi.prefix + 'fullscreenchange';
+
+                fullScreenApi.isFullScreen = function () {
+                    switch (this.prefix) {
+                        case '':
+                            return document.fullScreen;
+                        case 'webkit':
+                            return document.webkitIsFullScreen;
+                        default:
+                            return document[this.prefix + 'FullScreen'];
+                    }
+                }
+                fullScreenApi.requestFullScreen = function (el) {
+                    return (this.prefix === '') ? el.requestFullScreen() : el[this.prefix + 'RequestFullScreen']();
+                }
+                fullScreenApi.cancelFullScreen = function (el) {
+                    return (this.prefix === '') ? document.cancelFullScreen() : document[this.prefix + 'CancelFullScreen']();
+                }
+            }
+
+            // jQuery plugin
+            if (typeof jQuery != 'undefined') {
+                jQuery.fn.requestFullScreen = function () {
+
+                    return this.each(function () {
+                        var el = jQuery(this);
+                        if (fullScreenApi.supportsFullScreen) {
+                            fullScreenApi.requestFullScreen(el);
+                        }
+                    });
+                };
+            }
+
+            // export api
+            window.fullScreenApi = fullScreenApi;
+        })();
+
+    </script>
+
+    <script>
+
+        // do something interesting with fullscreen support
+        var fsButton = document.getElementById('fsbutton'), fsElement = document.getElementById('fsbody');
+
+        if (window.fullScreenApi.supportsFullScreen) {
+            // handle button click
+            fsButton.addEventListener('click', function () {
+                window.fullScreenApi.requestFullScreen(fsElement);
+            }, true);
+        } else {
+
+        }
+
+    </script>*@
