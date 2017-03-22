@@ -1,5 +1,15 @@
 ﻿@{
     Layout = "~/Views/shared/_root.cshtml";
 }
-
-@RenderBody()
+<section class="wrap-content index" style="padding-top:30px">
+    <article class="content">
+        <section class="middle flex flex-between">
+            <div class="left02">
+                @Html.Partial("home/_categories")
+                </div>
+            <div class="right02">
+                @RenderBody()
+                </div>
+</section>
+     </article>
+</section>

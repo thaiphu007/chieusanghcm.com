@@ -1,108 +1,95 @@
 ﻿@{
     Layout = "~/Views/shared/_home.cshtml";
 }
-<main>
-    <div class="width1000px">
 
-        <div id="main-content" class="main-content full100 mar-bottom-30 mar-top-30">
-            <div class="boxes">
-                <div class="title_box1 bg_header_box round_top_left_right">
-                    <h1 class="header2 clo_white">
-                        Live Auctions
-                    </h1>
-                </div>
-
-                <div class="content_box1 bg_white gridview" id="loadDiv">
-                    <div class='auction_item'>
-                        <input type="hidden" value="false" />
-                        <div class="sec1">
-                            <h5 class="auction-item-title"><a href="https://demo.pennyauctionsoftware.com/22283/detail.htm" class="clo_grey_dark">Acer One 10 S1002-145A 10.1</a></h5>
-                            <div class="clear"></div>     
-                        </div>
-                        <div class="sec2">
-                            <div class="img_auction">
-                                <a href="https://demo.pennyauctionsoftware.com/22283/detail.htm">
-                                    <img src="https://demo.pennyauctionsoftware.com/media/penny/products/2016/10/25/Acer.jpg">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="sec3">
-                            <div class="clear"></div>
-                            <div class="notranslate timer " id="timer22283" timer="10534" timeleft="20" change="0">
-                            </div>
-                            <div class="price " id="price22283" price="0">$0.00</div>
-                            <div class="userplay" id="winner22283" winner="0">No Bidder</div>
-                            <div class="btnbox" id="btnbox22283">
-                                <input type="button" id='22283' value="View" class="notranslate buttons width120 small orange">
-                            </div>
-                        </div>                        
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <div id="Content_Content1Col_divUpcoming" class="main-content full100 mar-bottom-30">
-            <div class="boxes">
-                <div class="title_box1 bg_header_box round_top_left_right">
-                    <h1 class="header2 clo_white">Upcoming Auctions</h1>
-                </div>
-
-
-                <div class="content_box1 bg_white listview mar-bottom-30">
-
-
-
-                    <div class='auction_item'>
-                        <div class="sec1">
-                            <h5 class="auction-item-title">
-                                <a href="https://demo.pennyauctionsoftware.com/22315/upcoming.htm"
-                                   class="clo_grey_dark">Apple MacBook Air MJVE2LL/A 13-inch Laptop</a>
-                            </h5>
-                            <div class="clear"></div>
-                            <div class="aution_feature">
-                                <span class="itemfeature subbidno" title="Bid(s) Deducted">1</span>
-                                <span class="itemfeature extendsecond" title="Extended Seconds">20s</span>
-                                <span class="itemfeature autobid " title="Auto Bids">&nbsp;</span>
-                                <span class="itemfeature buynow " title="Buy Now">&nbsp;</span>
-                                <span class="itemfeature chair hide" title="Seat Auction">&nbsp;</span>
-                            </div>
-                            <div class="shortdesc">Apple MacBook Air MJVE2LL/A 13-inch Laptop</div>
-                            <div class="actioncommand"></div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="sec2">
-                            <div class="img_auction">
-                                <div class="icongiveaway "></div>
-                                <div class="iconminimum "></div>
-                                <div class="icongoldentime "></div>
-                                <a href="https://demo.pennyauctionsoftware.com/22315/upcoming.htm">
-                                    <img src="https://demo.pennyauctionsoftware.com/media/penny/products/2016/10/24/Macbook.jpg">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="sec3">
-                            <div class="clear"></div>
-                            <div class="timer">
-                              
-                            </div>
-
-                            <div class="price">$850.00</div>
-                        </div>
-                        <div class='Regular'></div>
-                    </div>
-
-                  
-
-
-                   
-                </div>
-            </div>
-        </div>
-
-
-
-
+    <div class="top02">
+        <ul class="tabs-menu flex flex-between">
+            <li><a class="current02" href="#">Latest Campaigns</a></li>
+            <li><a href="#">Promote to Network</a></li>
+            <li><a href="#">Near Me</a></li>
+            <li><a href="#">All Friends</a></li>
+        </ul>
     </div>
-</main>
-<div class="clear"></div>
+    <div class="list-box flex">
+        <div class="list-item">
+            <div class="item-img">
+                <a href="#"><img src="@Url.Content("~/content/images/item-img.png")"></a>
+            </div>
+            <div class="icon-like"></div>
+            <h4><a href="#">Baby 1(active/mouse hover)</a></h4>
+            <p class="text02">We are of the belief that 80% of crowdfunding campaigns</p>
+            <p class="money">$35,899<span>of $45k</span></p>
+            <div class="loading-bar">
+                <div class="loading-pjbar" style="width:30%"></div>
+            </div>
+            <a class="local" href="#"><span></span>Traverse City , USA</a>
+        </div>
+        <div class="list-item">
+            <div class="item-img">
+                <a href="#"><img src="@Url.Content("~/content/images/item-img.png")"></a>
+            </div>
+            <div class="icon-like"></div>
+            <h4><a href="#">Baby 1(active/mouse hover)</a></h4>
+            <p class="text02">We are of the belief that 80% of crowdfunding campaigns</p>
+            <p class="money">$35,899<span>of $45k</span></p>
+            <div class="loading-bar">
+                <div class="loading-pjbar" style="width:60%"></div>
+            </div>
+            <a class="local" href="#"><span></span>Traverse City , USA</a>
+        </div>
+        <div class="list-item">
+            <div class="item-img">
+                <a href="#"><img src="@Url.Content("~/content/images/item-img.png")"></a>
+            </div>
+            <div class="icon-like"></div>
+            <h4><a href="#">Baby 1(active/mouse hover)</a></h4>
+            <p class="text02">We are of the belief that 80% of crowdfunding campaigns</p>
+            <p class="money">$35,899<span>of $45k</span></p>
+            <div class="loading-bar">
+                <div class="loading-pjbar" style="width:50%"></div>
+            </div>
+            <a class="local" href="#"><span></span>Traverse City , USA</a>
+        </div>
+        <div class="list-item">
+            <div class="item-img">
+                <a href="#"><img src="@Url.Content("~/content/images/item-img.png")"></a>
+            </div>
+            <div class="icon-like"></div>
+            <h4><a href="#">Baby 1(active/mouse hover)</a></h4>
+            <p class="text02">We are of the belief that 80% of crowdfunding campaigns</p>
+            <p class="money">$35,899<span>of $45k</span></p>
+            <div class="loading-bar">
+                <div class="loading-pjbar" style="width:20%"></div>
+            </div>
+            <a class="local" href="#"><span></span>Traverse City , USA</a>
+        </div>
+        <div class="list-item">
+            <div class="item-img">
+                <a href="#"><img src="@Url.Content("~/content/images/item-img.png")"></a>
+            </div>
+            <div class="icon-like"></div>
+            <h4><a href="#">Baby 1(active/mouse hover)</a></h4>
+            <p class="text02">We are of the belief that 80% of crowdfunding campaigns</p>
+            <p class="money">$35,899<span>of $45k</span></p>
+            <div class="loading-bar">
+                <div class="loading-pjbar" style="width:80%"></div>
+            </div>
+            <a class="local" href="#"><span></span>Traverse City , USA</a>
+        </div>
+        <div class="list-item">
+            <div class="item-img">
+                <a href="#"><img src="@Url.Content("~/content/images/item-img.png")"></a>
+            </div>
+            <div class="icon-like"></div>
+            <h4><a href="#">Baby 1(active/mouse hover)</a></h4>
+            <p class="text02">We are of the belief that 80% of crowdfunding campaigns</p>
+            <p class="money">$35,899<span>of $45k</span></p>
+            <div class="loading-bar">
+                <div class="loading-pjbar" style="width:90%"></div>
+            </div>
+            <a class="local" href="#"><span></span>Traverse City , USA</a>
+        </div>
+    </div>
+    <center>
+        <button class="btn btn-loadmore">load more</button>
+    </center>

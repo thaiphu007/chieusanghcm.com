@@ -1,0 +1,234 @@
+﻿@charset "utf-8";
+/* CSS Document */
+.color0{
+	color: #fff !important;
+}
+.color1{
+	color: #594b40;
+}
+.color2{
+	color: #78a7af;
+}
+.color3{
+	color: #dbdd22;
+}
+.color4{
+	color: #594b40;
+}
+.color5{
+	color:  #818181;
+}
+.auction_instruction dt{color:#436947}
+h1,h2,h3,h4,
+.text01,
+.text02,
+.local{
+	color: #594b40;
+}
+.color-text01{
+	color: #464646 !important;
+}
+.menu a,
+.money span,
+footer p,
+.footer-link a,
+.comment-content{
+	color: #464646;
+}
+.btn-search01 span{
+	color: #b7b7b7;
+}
+.btn-signup{
+    color: #fff !important;
+    background:  #594b40;
+}
+.number{
+	background-color:  #594b40;
+	color:  #dbdd22;
+}
+.search-title{
+	color: #fff;
+	background: #78a7af;
+}
+.left02{
+    background-color:  #ffffff;
+}
+.img03,
+.detail-info{
+	background-color:  #f6f7f8;
+}
+.menu-left a,
+footer h4{
+    color: #959595;
+}
+.list-style{
+    background: #454373;
+}
+.current01 .list-style,
+.menu-left a:hover .list-style{
+    background: #66b57f;
+}
+.money{
+    color:  #38a0a3;
+}
+.loading-bar{
+    background-color:  #ffffff;
+}
+.loading-pjbar{
+    background-color:  #9c8689;
+}
+/*
+.current03{
+    background-color:  rgba(219, 221, 34, 0.1)!important;
+}
+.current03 h4{
+    color:  rgba(156, 134, 137, 0.8);
+}
+*/
+/*
+.current03 .text02,
+.current03 .money span,
+*/
+.current04,
+.loadmore01,
+.color-black{
+    color: #000;
+}
+/*
+.current03 .loading-pjbar{
+    background-color:  #dbdd22;
+}
+*/
+footer{
+	background:  #f7f6f6;
+}
+/*
+.login-content label{
+	color:  #ff0000;
+}
+*/
+/*
+.login-content p,
+.login-content h3{
+	color:  #9b9999 ;
+}
+*/
+.back,
+.campaign .none-bg,
+.campaign .donate-detail-input label{
+	color:  #9b9999 !important;
+}
+.btn-login-sub,
+.btn-donate-now,
+.btn-continue,
+.btn-profile,
+.btn-search02,
+.btn-onpopup,
+.create-campaign{
+	background-color:  #dbdd22;
+	color: #fff;
+}
+.bg-extract{
+	background-color:  #23acb4!important;
+	color: #fff!important;
+}
+.bg-extract label{
+	color: #fff!important;
+}
+.btn-withdraw-view{
+	background: #00a388;
+	color: #fff;
+}
+.btn-withdraw-view01{
+	background: #ea3b28;
+	color: #fff;
+}
+.btn-share-fb{
+	background:#3b5998;border-bottom: 3px solid #E3E3E3;
+}
+.btn-share-fb a{
+	 color: #fff!important;
+}
+.right03>div
+/*
+.action-panels,
+.detail-raised,
+.comment-fb-box,
+.other-help,
+.donate-history
+*/{
+	background-color:  #f6f7f8;
+}
+.solical-input{
+	background: #fff !important;
+	color: #818181;
+}
+.detail-raised .money{
+	color: #000;
+}
+.donate-detail-input{
+    background-color:  #e1f4f3;
+}
+.text-checkbox{
+    color:  #23acb4;
+}
+.text-red{
+    color: #ea4d5b;
+}
+.text-green{
+    color:  #41753c;
+}
+.text-green01{
+	color:  #00a388;
+}
+.text-blue{
+    color:  #23acb4;
+}
+.bg-blue{
+     background: rgba(214, 243, 245, 0.5);
+}
+.bg-blue01{
+	background: #0669b2 !important;
+}
+.bg-blue02{
+    background: #e3e6e9
+}
+.bg-red{
+    background: rgba(223, 0, 36, 0.28);
+}
+.bg-green{
+    background: rgba(190, 246, 184, 0.28);
+}
+.bg-green01{
+	background:  #377d83;
+}
+.bg-yellow{
+	background: #f3faea;
+}
+.bg-gay{
+	background: #e6e6e6 !important;
+}
+.bg-gay01{
+    background: #f2f2e7;
+}
+.update-box-comment,
+.change-withdraw,
+.bg-rose{
+	background: #f9f8e6;
+}
+.attach-file-label{
+	background: #fff;
+}
+.change-withdraw{
+	background: #f9f8e6;
+}
+.withdraw-request table th{
+	background: #e6e6e6;
+}
+.dashboard-main{
+    background-color:  #f8f6f6;
+}
+/*
+.money span{
+    color:  #000000;
+}*/

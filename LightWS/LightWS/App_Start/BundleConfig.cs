@@ -12,22 +12,14 @@ namespace LightWS
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/js/jquery/jquery-{version}.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                        "~/js/jquery/jquery.validate*"));
-         
-
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/js/bootstrap.js",
                       "~/js/respond.js"));
             var bundle = new StyleBundle("~/content/css");
 
-            bundle.Include(string.Format("~/themes/{0}/screen.css", ThemeName), new CssRewriteUrlTransformFixed());
-            bundle.Include(string.Format("~/themes/{0}/responsive-tabs.css", ThemeName), new CssRewriteUrlTransformFixed());
-            bundle.Include(string.Format("~/themes/{0}/format-space-color.css", ThemeName), new CssRewriteUrlTransformFixed());    
-            bundle.Include(string.Format("~/themes/{0}/header.css", ThemeName), new CssRewriteUrlTransformFixed());
-            bundle.Include(string.Format("~/themes/{0}/footer.css", ThemeName), new CssRewriteUrlTransformFixed());
+            bundle.Include(string.Format("~/themes/{0}/content/css/style.css", ThemeName), new CssRewriteUrlTransformFixed());
+            bundle.Include(string.Format("~/themes/{0}/content/css/reponsive.css", ThemeName), new CssRewriteUrlTransformFixed());
             
-
             bundles.Add(bundle);
             
             

@@ -1,0 +1,33 @@
+#page-wrap {
+	margin: 50px;
+}
+/*...........................................Css3.................................................*/
+.rps-table th {
+    display: none;
+}
+.rps-table td {
+    display: block;
+}
+.rps-table td:before{
+    content: attr(data-th) ": ";
+    font-weight: bold;
+    width: 7.5em;
+    display: inline-block;
+    color: #044476;
+}
+.rps-table td:first-child {
+    padding-top: .5em;
+}
+.rps-table td:last-child {
+    padding-bottom: .5em;
+}
+@media (min-width: 768px) {
+    .rps-table td:before {
+        display: none;
+    }
+    .rps-table th,
+    .rps-table td {
+        display: table-cell;
+        padding: .25em .5em;
+    }
+}
